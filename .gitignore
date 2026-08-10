@@ -1,0 +1,9 @@
+# Claude Code session state
+.claude/
+
+# mkdocs build output
+site/
+
+# Python
+.venv/
+__pycache__/

@@ -1,0 +1,68 @@
+site_name: Posternity
+site_description: An out-of-band management enclave reference architecture for research computing
+site_url: https://atmarx.github.io/posternity/
+repo_url: https://github.com/atmarx/Posternity
+repo_name: atmarx/posternity
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+
+plugins:
+  - search
+  - macros:
+      include_yaml:
+        - overlay/deployment.yml
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - Overview: architecture/index.md
+      - Network layer: architecture/network.md
+      - Firewall and HA: architecture/firewall-ha.md
+      - Utility tier: architecture/utility-tier.md
+      - Tenant jump VMs: architecture/jump-vms.md
+  - Access and identity:
+      - The two doors: access/doors.md
+      - Identity and authorization: access/identity.md
+  - Library:
+      - Overview: library/index.md
+      - Media share: library/media-share.md
+      - Curation and refresh: library/curation.md
+      - Licenses: library/licenses.md
+  - Security posture:
+      - Egress policy: security/egress.md
+      - Audit and monitoring: security/audit.md
+      - Risk and contingency: security/risk-contingency.md
+  - Operations:
+      - Onboarding: operations/onboarding.md
+      - BMC intake hardening: operations/bmc-intake.md
+      - Offboarding: operations/offboarding.md
+      - Attestations: operations/attestations.md
+  - System Security Plan: ssp/index.md
+  - Reference:
+      - Deployment parameters: reference/deployment-parameters.md
+      - Decisions ledger: reference/decisions.md
+      - User guide fragments: reference/user-guide.md

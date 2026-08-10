@@ -1,0 +1,29 @@
+# Deployment overlay — the single file an institutional deployment replaces.
+#
+# The reference repository ships the fictional Northwinds University
+# "Mudroom" deployment as its worked example.  A private deployment
+# repository overrides this file with real values and rebuilds the site:
+# the instructional walkthrough becomes that institution's deployment
+# documentation.  See docs/reference/deployment-parameters.md.
+
+deployment:
+  name: Mudroom
+  organization: Northwinds University
+  base_domain: mudroom.northwinds.edu
+  repo: northwinds/mudroom
+  idp: idp.northwinds.edu
+  mfa_source: Institutional IdP (Duo)
+  smtp_smarthost: smtp.northwinds.edu, accepts by source IP
+  log_service: logs.northwinds.edu:6514, Enterprise IT SOC
+  campus_ntp: ntp.northwinds.edu
+  escrow_custodian: Enterprise IT credential vault
+  supernet: 10.60.0.0/16
+  subnet_plan: worked map in northwinds/mudroom
+  vlan_plan: worked map in northwinds/mudroom
+  certificate_authority: Institutional ACME (InCommon)
+  hypervisor_platform: 2× Proxmox + QDevice
+  fleet_vendors: Dell (primary), Supermicro
+  distro_set: Ubuntu LTS, Rocky, Debian
+  group_source_of_truth: Globus Groups (Root Cellar / Northstar)
+  recording_retention: 1 year hot, archive per institutional schedule
+  log_retention_local: 180 days
