@@ -1,3 +1,2 @@
-mkdocs>=1.6,<2
-mkdocs-material>=9.5
-mkdocs-macros-plugin>=1.0
+# Zensical is pre-1.0; stay on the 0.0.x line this site was verified against.
+zensical~=0.0.67

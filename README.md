@@ -10,7 +10,7 @@ Posternity is a complete answer: a bounded, segmented, zero-egress enclave that 
 
 ## How this repository works
 
-This repository builds as an **instructional walkthrough**: an mkdocs site covering the full architecture, from network segmentation through the SSP skeleton.  A deployment is an **overlay**: the institution-specific values live in [`overlay/deployment.yml`](overlay/deployment.yml), and the reference build ships with the fictional Northwinds University **Mudroom** deployment filled in as the worked example.  An institutional deployment repository overrides that one file (and adds its private material) and rebuilds the same site — the walkthrough becomes that institution's deployment documentation.
+This repository builds as an **instructional walkthrough**: a [Zensical](https://zensical.org) site covering the full architecture, from network segmentation through the SSP skeleton.  A deployment is an **overlay**: the institution-specific values live in [`overlay/deployment.yml`](overlay/deployment.yml), and the reference build ships with the fictional Northwinds University **Mudroom** deployment filled in as the worked example.  An institutional deployment repository overrides that one file (and adds its private material) and rebuilds the same site — the walkthrough becomes that institution's deployment documentation.
 
 | Layer | Name | Repository | Visibility |
 |---|---|---|---|
@@ -25,8 +25,10 @@ This repository builds as an **instructional walkthrough**: an mkdocs site cover
 ```sh
 python3 -m venv .venv && . .venv/bin/activate
 pip install -r requirements.txt
-mkdocs serve
+zensical serve
 ```
+
+`zensical build --strict` is what CI runs: a broken link, a dead anchor, or an overlay key the docs reference but `overlay/deployment.yml` doesn't define fails the build.  Pushes to `main` publish to [atmarx.github.io/posternity](https://atmarx.github.io/posternity/).
 
 ## Status
 

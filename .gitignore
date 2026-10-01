@@ -1,8 +1,9 @@
 # Claude Code session state
 .claude/
 
-# mkdocs build output
+# Zensical build output and cache
 site/
+.cache/
 
 # Python
 .venv/
