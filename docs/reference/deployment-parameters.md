@@ -1,6 +1,6 @@
 # Deployment parameters
 
-Every institution-specific value a deployer must supply lives in one file: [`overlay/deployment.yml`](https://github.com/atmarx/Posternity/blob/main/overlay/deployment.yml). That file is the **overlay** — an institutional deployment repository overrides it with real values and rebuilds this site, so the walkthrough you are reading becomes that institution's own deployment documentation.
+Every institution-specific value a deployer must supply lives in one file: [`overlay/deployment.yml`](https://github.com/atmarx/posternity/blob/main/overlay/deployment.yml). That file is the **overlay** — an institutional deployment repository overrides it with real values and rebuilds this site, so the walkthrough you are reading becomes that institution's own deployment documentation.
 
 This build renders the fictional Northwinds University **{{ deployment.name }}** deployment as its worked example; the values below come straight from the overlay file.
 

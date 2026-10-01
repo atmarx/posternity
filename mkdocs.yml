@@ -1,9 +1,9 @@
 site_name: Posternity
 site_description: An out-of-band management enclave reference architecture for research computing
 site_url: https://atmarx.github.io/posternity/
-repo_url: https://github.com/atmarx/Posternity
+repo_url: https://github.com/atmarx/posternity
 repo_name: atmarx/posternity
-copyright: Posternity &copy; 2026 Andrew Marx — docs <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, code <a href="https://github.com/atmarx/Posternity/blob/main/LICENSE-CODE">MIT</a>
+copyright: Posternity &copy; 2026 Andrew Marx — docs <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, code <a href="https://github.com/atmarx/posternity/blob/main/LICENSE-CODE">MIT</a>
 
 theme:
   name: material
