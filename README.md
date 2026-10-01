@@ -30,6 +30,15 @@ mkdocs serve
 
 ## Status
 
-Draft 0.1 — the specification is complete and lives in [`docs/`](docs/); build documentation, scripts, and the Mudroom reference deployment are in progress.  License: TBD (likely a docs/code split; not yet chosen).
+Draft 0.1 — the specification is complete and lives in [`docs/`](docs/); build documentation, scripts, and the Mudroom reference deployment are in progress.
 
 Contributions of generalizable improvements are welcome; institution-specific logic belongs in your deployment repository.
+
+## License
+
+A docs/code split, because the two get used differently.
+
+- **The specification and walkthrough** — everything under `docs/` — is [**CC BY-SA 4.0**](https://creativecommons.org/licenses/by-sa/4.0/).  Full text in [`LICENSE`](LICENSE).  Same terms as Northwinds, where the Mudroom lives: fork it, adapt it, credit the source, and share your adapted version under the same terms.
+- **Code and configuration** — scripts, the overlay, the site build, and any code block or config snippet inside the docs — is [**MIT**](LICENSE-CODE).  Paste the pfSense rule or the intake script into your private config repo and get on with your day.
+
+ShareAlike attaches when you *share*.  A private institutional deployment that rebuilds this site for its own operators, or hands its SSP to an assessor, owes nothing back — though the [contribution discipline](#how-this-repository-works) hopes you send the generalizable fixes upstream anyway.
