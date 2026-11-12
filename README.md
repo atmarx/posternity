@@ -15,7 +15,7 @@ This repository builds as an **instructional walkthrough**: a [Zensical](https:/
 | Layer | Name | Repository | Visibility |
 |---|---|---|---|
 | Project / reference architecture | Posternity | `atmarx/posternity` | Public |
-| Reference deployment (fictional Northwinds University) | **Mudroom** (`mudroom.northwinds.edu`) | `northwinds/mudroom` | Public |
+| Reference deployment (fictional Northwinds University) | **Mudroom** (`mudroom.northwinds.edu`) | `northwinds/mudroom` (not yet created) | Public |
 | Institutional deployment (example) | *institution's choice* (e.g., `mgmt-enclave`) | private | Private |
 
 **Contribution discipline:** anything an institutional deployment needs that is not institution-specific is built in `posternity` and consumed downstream — never patched locally.  The moment a private deployment carries a generalizable fix the reference does not, the reference architecture has started lying.
@@ -28,11 +28,14 @@ pip install -r requirements.txt
 zensical serve
 ```
 
-`zensical build --strict` is what CI runs: a broken link, a dead anchor, or an overlay key the docs reference but `overlay/deployment.yml` doesn't define fails the build.  Pushes to `main` publish to [atmarx.github.io/posternity](https://atmarx.github.io/posternity/).
+`zensical build --strict` is what CI runs: a broken link, a dead anchor, or an overlay key the docs reference but `overlay/deployment.yml` doesn't define fails the build.  Pushes to `main` are meant to publish to [atmarx.github.io/posternity](https://atmarx.github.io/posternity/) via `.github/workflows/docs.yml` — but GitHub Pages isn't enabled on the repo yet, so the build passes and the deploy step fails.  Until someone flips Pages to *Source: GitHub Actions*, the site only exists locally.
 
 ## Status
 
-Draft 0.1 — the specification is complete and lives in [`docs/`](docs/); build documentation, scripts, and the Mudroom reference deployment are in progress.
+Draft 0.1.
+
+- **Real:** the full specification, as a walkthrough site in [`docs/`](docs/) — architecture, access, library, security posture, operations, the SSP skeleton, and the [decisions ledger](docs/reference/decisions.md).  The Mudroom overlay values in [`overlay/deployment.yml`](overlay/deployment.yml).  A CI build that passes `--strict`.
+- **Not yet:** a published site (see above), build scripts and automation, and the `northwinds/mudroom` repository itself — for now the Mudroom exists only as the overlay this repo ships with.
 
 Contributions of generalizable improvements are welcome; institution-specific logic belongs in your deployment repository.
 
