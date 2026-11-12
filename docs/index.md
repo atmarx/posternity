@@ -22,7 +22,7 @@ Posternity defines a **dedicated out-of-band (OOB) management enclave** that:
 
 **In scope:** the enclave network, its firewall/routing layer, its utility services, tenant jump hosts, the management interfaces of connected systems (BMCs, hypervisor and storage management planes, management-address SSH/RDP/HTTPS) as connected components, and all access paths.  The enclave reaches a connected system only on a management address that lives on an enclave segment — never on its data-plane addresses ([decision 19](reference/decisions.md)).
 
-**Explicitly out of scope:** the research servers' production (in-band) interfaces, operating systems, and data planes. The enclave carries *administrative access to* systems that may process research data; it processes **no research data itself**. This claim bounds the [security categorization](ssp/index.md#103-security-categorization) and justifies several [deliberate control decisions](security/risk-contingency.md).
+**Explicitly out of scope:** the research servers' production (in-band) interfaces, operating systems, and data planes. The enclave carries *administrative access to* systems that may process research data; it processes **no research data itself**.  The one bounded exception is [IT-service tenants](reference/decisions.md), which may host data-bearing service hosts (such as encrypted backup servers) where institutional policy rates that data below its sources (decision 21). This claim bounds the [security categorization](ssp/index.md#103-security-categorization) and justifies several [deliberate control decisions](security/risk-contingency.md).
 
 ## Naming and repository topology
 

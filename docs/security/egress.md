@@ -9,6 +9,8 @@
 | 3 | Keycloak VM | Institutional IdP | 443 TCP | Identity brokering during login |
 | 4 | pfSense | Campus NTP | 123 UDP | Upstream time (pfSense serves NTP/DNS internally) |
 
+**IT-service tenants** ([decision 21](../reference/decisions.md)) are the one class that may add rows: a data-bearing service host in an IT-service tenant segment (a backup server reaching its agents and repositories, say) gets **per-tenant, per-destination, per-port** egress rules, each named in the deployment's egress table with an owner and a review date.  Never a general NAT.  Research tenants and every BMC stay at zero.
+
 Notably absent: any library-refresh egress ([push-in](../library/curation.md)), any BMC egress of any kind (NTP, DNS, syslog, and alert relay are all provided *inside* the enclave), and any general web access ([half-screen doctrine](../access/doors.md#tenant-path-guacamole)). Ingress is limited to the [two doors](../access/doors.md) plus institutional monitoring of the doors themselves if required.
 
 pfSense does not relay SMTP (no MTA in base pfSense); exception 1 is a plain firewall rule, not a service. If institutional mail later requires authenticated submission, a minimal Postfix satellite VM on the utility tier replaces the rule — but only add it if the direct rule proves insufficient.

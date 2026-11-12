@@ -4,7 +4,7 @@ Mapped to **NIST SP 800-171** (an 800-53 moderate crosswalk may be appended for 
 
 ## 10.1 System identification and description
 
-Name, owner, operational status, system type: **management enclave / security support system**. Key framing sentence: *this system processes no research data; it carries administrative access to systems that may.*
+Name, owner, operational status, system type: **management enclave / security support system**. Key framing sentence: *this system processes no research data; it carries administrative access to systems that may.*  If the deployment admits [IT-service tenants](../reference/decisions.md) hosting data-bearing services (decision 21), name each one here with the institutional policy that rates its data.
 
 ## 10.2 System boundary and environment
 
@@ -12,7 +12,7 @@ The boundary diagram is the heart of the document. **In scope:** pfSense pair, P
 
 ## 10.3 Security categorization
 
-Confidentiality of enclave *contents* is low (no research data). **Integrity and availability of the management plane are high**: compromise of the enclave is compromise-by-proxy of every connected research system; loss of the enclave removes out-of-band recovery capability precisely when it is needed. Categorize on the impact of the systems the enclave controls, not the data it carries.
+Confidentiality of enclave *contents* is low (no research data). **Integrity and availability of the management plane are high**: compromise of the enclave is compromise-by-proxy of every connected research system; loss of the enclave removes out-of-band recovery capability precisely when it is needed. Categorize on the impact of the systems the enclave controls, not the data it carries.  Data-bearing hosts in IT-service tenant segments (decision 21) enter this categorization at the rating institutional policy assigns their data (e.g., encrypted backups), not at the rating of their sources.
 
 ## 10.4 Roles and responsibilities
 
