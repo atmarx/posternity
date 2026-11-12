@@ -4,7 +4,9 @@
 
 Every server in a research fleet carries a baseboard management controller — iDRAC, iLO, OpenBMC — a small always-on computer with total power over its host.  BMCs are chronically under-secured (default credentials, slow firmware, a protocol with known cryptographic defects) and chronically over-exposed (flat management VLANs reachable by whole departments, or worse).
 
-Posternity is a complete answer: a bounded, segmented, zero-egress enclave that contains all BMC traffic, gates every human through one of two identity-backed doors, records every session, curates its own software library, and documents itself as a System Security Plan mapped to NIST SP 800-171.
+BMCs are the motivating case, not the boundary — hypervisor consoles, storage dashboards, and management-address SSH/RDP have the same problem.
+
+Posternity is a complete answer: a bounded, segmented, zero-egress management enclave that carries all of that administrative traffic, gates every human through one of two identity-backed doors, records every session, monitors what it carries, curates its own software library, and documents itself as a System Security Plan mapped to NIST SP 800-171.
 
 > **Why "Posternity"?**  A *postern* is the small, guarded rear gate of a fortification — the private entrance used by those who belong there.  The reference architecture is also the durable artifact written *for posterity*, while deployments are its ephemeral instantiations.
 
